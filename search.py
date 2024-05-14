@@ -11,27 +11,74 @@ def main() -> None:
     configs = dotenv_values('./path.env')
     argparser = ap.ArgumentParser()
     
-    # positional arguments
+    # -- positional arguments -- #
+    
+    # file/folder name
     argparser.add_argument(
         "name",
         help="name of the file/folder you want to find",
     )
     
-    #optional arguments
+    # -- optional arguments -- #
+    
+    # move to the directory
     argparser.add_argument(
         "-g",
         "--goto",
         help="move to the proposed directory",
         action="store_true"
     )
+    
+    argparser.add_argument(
+        "-f",
+        "--file",
+        help="you search only for files",
+        action="store_true"
+    )
+    
+    argparser.add_argument(
+        "-d",
+        "--dir",
+        help="you search only for folder/directory",
+        action="store_true"
+    )
 
     args =argparser.parse_args()
     
+    # -- data access -- #
+    paths = []
+    
+    if not (args.file or args.dir):
+        args.file = True
+        args.dir  = True
+    
     # access the folder data
-    with open(configs["FOLDER_DATA_PATH"], "r") as file:
-        
-        folderMap = json.loads(file.read())
-        paths = folderMap.get(args.name)
+    if args.dir:
+        with open(configs["FOLDER_DATA_PATH"], "r") as file:
+            
+            folderMap  = json.loads(file.read())
+            folderData = folderMap.get(args.name)
+            
+            if not folderData :
+                pass
+            elif type(folderData) is list:
+                paths.extend(folderData)
+            else:
+                paths.append(folderData)
+    
+    # acces the file data
+    if args.file:
+        with open(configs["FILE_DATA_PATH"], "r") as file:
+            
+            fileMap = json.loads(file.read())
+            fileData = fileMap.get(args.name)
+            
+            if not fileData:
+                pass
+            elif type(fileData) is list:
+                paths.extend(fileData)
+            else:
+                paths.append(fileData)
     
     # no folder found
     if not paths:
@@ -40,7 +87,8 @@ def main() -> None:
     
     # only one found
     elif len(paths) == 1 :
-        idx = 0
+        print()
+        print("{0} : {1}".format(0, paths[0]))
     
     # many folders with the same name
     else:

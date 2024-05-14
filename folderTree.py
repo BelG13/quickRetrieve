@@ -35,10 +35,18 @@ def create_item_maps(root : str) -> None:
         # it is a file
         if os.path.isfile(current_item_path):
             
-            if fileMap.get(item_name):
-                fileMap[item_name].append(current_item_path)
+            # we remove the extensions
+            if item_name.startswith('.'): #special files
+                item_name_= "." + "".join(item_name.split('.')[1])
             else:
-                fileMap[item_name] = [current_item_path]
+                item_name_= "".join(item_name.split('.')[0])
+            
+            
+            # we store the parent foldr of each file
+            if fileMap.get(item_name_):
+                fileMap[item_name_].append(current_item_path[:-len(item_name)-1])
+            else:
+                fileMap[item_name_] = [current_item_path[:-len(item_name)-1]]
         
         # it is a directory
         elif folderMap.get(item_name):

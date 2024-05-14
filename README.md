@@ -69,6 +69,10 @@ search <your_file_name>
 ```
 If there is no such file located under your ``ROOT``, nothing will be found.
 
+For more details about the ``search``command you can run
+```
+search -h
+```
 ## Curent stage of the Project.
 
 This is the first draft of the project and it represents the minimam viable code to make it work properly.
@@ -79,6 +83,13 @@ Functionnalites | stage | priority |assignation |
 --- | --- | --- | --- |
 Refractor the code for saving the data, use a decorator. | ${\textsf{\color{skyblue}Under implementation}}$ | ${\textsf{\color{lightgreen}low}}$ |${\textsf{\color{violet}Belg13}}$ |
 Propose similar folder name if the user folder name does not exit | ${\textsf{\color{darkgrey}not started}}$ | ${\textsf{\color{lightgrey}medium}}$ |${\textsf{\color{violet}Belg13}}$ |
-search <file_name> is not currently supported, needs to be fixed | ${\textsf{\color{skyblue}Under implementation}}$ | ${\textsf{\color{red}High}}$ |${\textsf{\color{violet}Belg13}}$
-Store files without their extension | ${\textsf{\color{skyblue}Under implementation}}$ | ${\textsf{\color{red}High}}$ |${\textsf{\color{violet}Belg13}}$
+Make it non case sensitive | ${\textsf{\color{darkgrey}not started}}$ | ${\textsf{\color{lightgreen}low}}$ |${\textsf{\color{violet}Belg13}}$ |
+Properly print the results in the terminal (alligned/colored etc) | ${\textsf{\color{darkgrey}not started}}$ | ${\textsf{\color{lightgreen}low}}$ |${\textsf{\color{violet}Belg13}}$ |
+
+### Fixed/Implemented : 
+
+Functionnalites | stage | priority |assignation |
+--- | --- | --- | --- |
+search <file_name> is not currently supported, needs to be fixed | ${\textsf{\color{green}Completed}}$ | ${\textsf{\color{red}High}}$ |${\textsf{\color{violet}Belg13}}$
+Store files without their extension | ${\textsf{\color{green}completed}}$ | ${\textsf{\color{red}High}}$ |${\textsf{\color{violet}Belg13}}$
 
