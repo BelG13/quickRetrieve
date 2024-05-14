@@ -34,7 +34,7 @@ FILE_DATA_PATH=<your_file_data_path>
 
 ``ROOT`` is the starting point of the program. the code will scan everything from the root and create data that stores the paths.
 
-``FOLDER_DATA_PATH` is the path to the ${\textsf{\color{red}json file}}$ that store the data structure of folders.
+``FOLDER_DATA_PATH`` is the path to the ${\textsf{\color{red}json file}}$ that store the data structure of folders.
 
 ``FILE_DATA_PATH`` is the path to the ${\textsf{\color{red}json file}}$ that store the data structure of files.
 
