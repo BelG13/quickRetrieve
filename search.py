@@ -5,7 +5,9 @@ from dotenv import dotenv_values
 
 
 def main() -> None:
-    
+    """Search the folder/file name given as command argument in the database and
+    allows a selection if many occurences exists.
+    """
     configs = dotenv_values('./path.env')
     argparser = ap.ArgumentParser()
     
@@ -25,25 +27,28 @@ def main() -> None:
 
     args =argparser.parse_args()
     
-    
-    with open("folders.json", "r") as file:
+    # access the folder data
+    with open(configs["FOLDER_DATA_PATH"], "r") as file:
         
         folderMap = json.loads(file.read())
         paths = folderMap.get(args.name)
     
+    # no folder found
     if not paths:
         print("\nNo directory/file is named {}".format(args.name))
         return
-        
+    
+    # only one found
     elif len(paths) == 1 :
         idx = 0
-        
+    
+    # many folders with the same name
     else:
         print()
         for i, path in enumerate(paths):
                 print("{0} : {1}".format(i, path))
         
-    
+    # if that argument is given we'd like to move to the repo
     if args.goto :
         
         idx = int(input("\nSelect the wanted path by typing the corresponding number : "))
