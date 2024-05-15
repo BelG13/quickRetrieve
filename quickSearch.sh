@@ -1,4 +1,6 @@
+source venv/bin/activate
 python search.py ${@:1}
+deactivate
 
 if [ -f "item_path.txt" ]; then
     dir="$(cat item_path.txt)"

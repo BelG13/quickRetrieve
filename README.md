@@ -13,13 +13,20 @@ First let's start by cloning the repo :
 git clone https://github.com/BelG13/quickRetrieve.git
 ```
 
-### create the path.env file
-Once the repo has been cloned, create a ``path.env`` file under ``quickRetrieve/``.
+### create the path.env file and the virtualenv
+Once the repo has been cloned, create a ``path.env`` file under ``quickRetrieve/`` as well as a python virtual environment.
 ```
 cd <your_path_to_repo>
 touch path.env
+python -m venv venv
 ```
 
+and finnaly install the required python packages
+```
+source venv/bin/activate
+pip install -r requirements.txt
+deactivate
+```
 ### Create your environement variables
 
 open the ``path.env``file, copy, paste and fill the following template into your ``path.env``file
@@ -85,6 +92,7 @@ Refractor the code for saving the data, use a decorator. | ${\textsf{\color{skyb
 Propose similar folder name if the user folder name does not exit | ${\textsf{\color{darkgrey}not started}}$ | ${\textsf{\color{lightgrey}medium}}$ |${\textsf{\color{violet}Belg13}}$ |
 Make it non case sensitive | ${\textsf{\color{darkgrey}not started}}$ | ${\textsf{\color{lightgreen}low}}$ |${\textsf{\color{violet}Belg13}}$ |
 Properly print the results in the terminal (alligned/colored etc) | ${\textsf{\color{darkgrey}not started}}$ | ${\textsf{\color{lightgreen}low}}$ |${\textsf{\color{violet}Belg13}}$ |
+Automate all the package importation and data creation | ${\textsf{\color{darkgrey}not started}}$ | ${\textsf{\color{lightgreen}low}}$ |${\textsf{\color{violet}Belg13}}$ |
 
 ### Fixed/Implemented : 
 

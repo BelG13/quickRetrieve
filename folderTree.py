@@ -2,7 +2,7 @@
 import os
 import json
 import logging
-from dotenv import dotenv_values
+from dotenv import dotenv_values # type: ignore
  
 # Assign root
 configs = dotenv_values('./path.env')
