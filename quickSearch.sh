@@ -1,5 +1,5 @@
 source venv/bin/activate
-python search.py ${@:1}
+python ./core/search.py ${@:1}
 deactivate
 
 if [ -f "item_path.txt" ]; then
