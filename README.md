@@ -66,7 +66,7 @@ search <your_file_name>
 
 the setup is now finished, but still the folder/file data needs to be created. then run :
 ```
-python <path_to_your_repo>/folderTree.py
+python -m core.create_data
 ```
 
 and now you are able to search for the precise location of any file from your ``ROOT`` directory.

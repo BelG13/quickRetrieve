@@ -1,6 +1,5 @@
 # Import module
 import os
-import logging
 from utils.save_data import save_data
 from dotenv import dotenv_values # type: ignore
  
